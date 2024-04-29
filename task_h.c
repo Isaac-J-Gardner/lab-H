@@ -12,7 +12,18 @@ int main(void) {
         filename[i++] = ch;
         // Enter your code under here
 
-        
+        if(ch == EOF){
+            if(i == 0){
+                printf("Error!");
+                return 1;
+            }
+            break;
+        }
+
+        if(i == 256){
+            printf("Error!");
+            return 1;
+        }
     }
     for (; i < N+1; i++) { // fill the rest of the array with null characters
         filename[i] = '\0';
@@ -20,7 +31,15 @@ int main(void) {
     
 
     // Enter your code under here
-
+    for(int j = 0; j < 256; j++){
+        if(filename[j] == '.'){
+            while(filename[j] != '\0'){
+                printf("%c", filename[j++]);
+            }
+            break;
+        }
+    }
+    
 
 
 
