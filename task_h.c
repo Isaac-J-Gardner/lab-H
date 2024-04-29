@@ -31,13 +31,14 @@ int main(void) {
     
 
     // Enter your code under here
-    for(int j = 0; j < 256; j++){
+    int last_dot = 0;
+    for(int j = 0; filename[j] != '\0'; j++){
         if(filename[j] == '.'){
-            while(filename[j] != '\0'){
-                printf("%c", filename[j++]);
-            }
-            break;
+            last_dot = j;
         }
+    }
+    while(filename[last_dot] != '\0'){
+        printf("%c", filename[last_dot++]);
     }
     
 
